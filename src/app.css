@@ -1,0 +1,868 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, garden;
+};
+
+/* Custom Cupcake Theme with Pink Colors and Cupcake Aesthetics */
+@plugin "daisyui/theme" {
+  name: "cupcake";
+  color-scheme: light;
+  
+  /* Pink-based cupcake color palette */
+  --color-primary: oklch(70% 0.15 350);        /* Sweet pink */
+  --color-primary-content: oklch(98% 0.01 350);
+  --color-secondary: oklch(75% 0.12 20);       /* Cream/vanilla */
+  --color-secondary-content: oklch(25% 0.05 20);
+  --color-accent: oklch(65% 0.18 300);         /* Berry purple */
+  --color-accent-content: oklch(98% 0.01 300);
+  --color-neutral: oklch(45% 0.05 340);        /* Muted pink-brown */
+  --color-neutral-content: oklch(98% 0.01 340);
+  
+  /* Base colors - soft pastels like frosting */
+  --color-base-100: oklch(98% 0.02 350);       /* Very light pink */
+  --color-base-200: oklch(95% 0.03 350);       /* Light pink */
+  --color-base-300: oklch(90% 0.05 350);       /* Soft pink */
+  --color-base-content: oklch(25% 0.05 350);   /* Dark text */
+  
+  /* Status colors with cupcake theme */
+  --color-info: oklch(70% 0.15 240);           /* Blueberry */
+  --color-info-content: oklch(98% 0.01 240);
+  --color-success: oklch(65% 0.15 140);        /* Mint green */
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: oklch(80% 0.15 60);         /* Lemon yellow */
+  --color-warning-content: oklch(25% 0.05 60);
+  --color-error: oklch(65% 0.18 15);           /* Cherry red */
+  --color-error-content: oklch(98% 0.01 15);
+  
+  /* Rounded corners like cupcake tops */
+  --radius-selector: 1.5rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+  
+  /* Soft, cupcake-like styling */
+  --size-selector: 0.5rem;
+  --size-field: 0.5rem;
+  --border: 2px;
+  --depth: 2;
+  --noise: 0.1;
+};
+
+/* Custom Garden Theme with Light Green and Blue Colors */
+@plugin "daisyui/theme" {
+  name: "garden";
+  color-scheme: light;
+  
+  /* Nature-inspired garden color palette */
+  --color-primary: oklch(65% 0.20 140);        /* Fresh light green */
+  --color-primary-content: oklch(98% 0.01 140);
+  --color-secondary: oklch(70% 0.18 200);      /* Sky blue */
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: oklch(75% 0.15 160);         /* Mint green */
+  --color-accent-content: oklch(25% 0.05 160);
+  --color-neutral: oklch(50% 0.08 120);        /* Sage green */
+  --color-neutral-content: oklch(98% 0.01 120);
+  
+  /* Base colors - natural earth tones */
+  --color-base-100: oklch(98% 0.01 140);       /* Very light green-white */
+  --color-base-200: oklch(95% 0.02 140);       /* Light green tint */
+  --color-base-300: oklch(90% 0.04 140);       /* Soft green */
+  --color-base-content: oklch(25% 0.05 120);   /* Dark forest green text */
+  
+  /* Status colors with garden theme */
+  --color-info: oklch(70% 0.20 220);           /* Ocean blue */
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: oklch(68% 0.22 140);        /* Vibrant green */
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: oklch(78% 0.18 80);         /* Sunflower yellow */
+  --color-warning-content: oklch(25% 0.05 80);
+  --color-error: oklch(65% 0.20 20);           /* Rose red */
+  --color-error-content: oklch(98% 0.01 20);
+  
+  /* Natural, organic rounded corners */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  
+  /* Garden-like styling */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0.05;
+};
+
+/* Enhanced Synthwave Theme - Neon Cyberpunk Aesthetic */
+@plugin "daisyui/theme" {
+  name: "synthwave";
+  color-scheme: dark;
+  
+  /* Vibrant neon synthwave colors */
+  --color-primary: oklch(75% 0.35 320);        /* Electric magenta */
+  --color-primary-content: oklch(15% 0.05 320);
+  --color-secondary: oklch(80% 0.30 280);      /* Neon purple */
+  --color-secondary-content: oklch(15% 0.05 280);
+  --color-accent: oklch(85% 0.25 180);         /* Cyan glow */
+  --color-accent-content: oklch(15% 0.05 180);
+  --color-neutral: oklch(25% 0.15 260);        /* Deep purple */
+  --color-neutral-content: oklch(90% 0.05 260);
+  
+  /* Dark neon base colors */
+  --color-base-100: oklch(12% 0.08 280);       /* Very dark purple */
+  --color-base-200: oklch(8% 0.10 280);        /* Darker purple */
+  --color-base-300: oklch(5% 0.12 280);        /* Deepest purple */
+  --color-base-content: oklch(90% 0.15 320);   /* Bright magenta text */
+  
+  /* Neon status colors */
+  --color-info: oklch(80% 0.30 200);           /* Electric blue */
+  --color-info-content: oklch(15% 0.05 200);
+  --color-success: oklch(75% 0.35 140);        /* Neon green */
+  --color-success-content: oklch(15% 0.05 140);
+  --color-warning: oklch(85% 0.30 60);         /* Electric yellow */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(70% 0.35 15);           /* Hot pink */
+  --color-error-content: oklch(15% 0.05 15);
+  
+  /* Sharp, futuristic edges */
+  --radius-selector: 0.25rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.25rem;
+  --border: 2px;
+  --depth: 4;
+  --noise: 0.2;
+};
+
+
+
+/* Enhanced Valentine Theme - Romantic Deep Reds and Pinks */
+@plugin "daisyui/theme" {
+  name: "valentine";
+  color-scheme: light;
+  
+  /* Romantic valentine colors */
+  --color-primary: oklch(55% 0.30 15);         /* Deep rose red */
+  --color-primary-content: oklch(95% 0.05 15);
+  --color-secondary: oklch(70% 0.25 350);      /* Romantic pink */
+  --color-secondary-content: oklch(20% 0.05 350);
+  --color-accent: oklch(60% 0.20 320);         /* Burgundy accent */
+  --color-accent-content: oklch(95% 0.05 320);
+  --color-neutral: oklch(40% 0.15 10);         /* Wine red */
+  --color-neutral-content: oklch(95% 0.05 10);
+  
+  /* Soft romantic base colors */
+  --color-base-100: oklch(96% 0.03 15);        /* Very light rose */
+  --color-base-200: oklch(92% 0.05 15);        /* Light rose */
+  --color-base-300: oklch(85% 0.08 15);        /* Soft rose */
+  --color-base-content: oklch(25% 0.10 15);    /* Dark rose text */
+  
+  /* Love-themed status colors */
+  --color-info: oklch(65% 0.25 240);           /* Royal blue */
+  --color-info-content: oklch(95% 0.05 240);
+  --color-success: oklch(60% 0.25 140);        /* Forest green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(75% 0.25 60);         /* Golden yellow */
+  --color-warning-content: oklch(20% 0.05 60);
+  --color-error: oklch(50% 0.35 15);           /* Deep red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Romantic rounded styling */
+  --radius-selector: 2rem;
+  --radius-field: 1rem;
+  --radius-box: 1.5rem;
+  --border: 2px;
+  --depth: 2;
+  --noise: 0.1;
+};
+
+/* Enhanced Halloween Theme - Spooky Orange and Black */
+@plugin "daisyui/theme" {
+  name: "halloween";
+  color-scheme: dark;
+  
+  /* Spooky halloween colors */
+  --color-primary: oklch(65% 0.35 40);         /* Pumpkin orange */
+  --color-primary-content: oklch(10% 0.05 40);
+  --color-secondary: oklch(45% 0.20 280);      /* Witch purple */
+  --color-secondary-content: oklch(90% 0.05 280);
+  --color-accent: oklch(70% 0.30 120);         /* Ghostly green */
+  --color-accent-content: oklch(10% 0.05 120);
+  --color-neutral: oklch(15% 0.05 30);         /* Midnight black */
+  --color-neutral-content: oklch(85% 0.10 30);
+  
+  /* Dark spooky base colors */
+  --color-base-100: oklch(8% 0.03 30);         /* Very dark */
+  --color-base-200: oklch(5% 0.05 30);         /* Darker */
+  --color-base-300: oklch(3% 0.08 30);         /* Deepest black */
+  --color-base-content: oklch(85% 0.15 40);    /* Orange text */
+  
+  /* Halloween status colors */
+  --color-info: oklch(60% 0.25 240);           /* Midnight blue */
+  --color-info-content: oklch(90% 0.05 240);
+  --color-success: oklch(55% 0.30 120);        /* Poison green */
+  --color-success-content: oklch(90% 0.05 120);
+  --color-warning: oklch(70% 0.35 50);         /* Jack-o'-lantern */
+  --color-warning-content: oklch(10% 0.05 50);
+  --color-error: oklch(50% 0.35 15);           /* Blood red */
+  --color-error-content: oklch(90% 0.05 15);
+  
+  /* Spooky jagged styling */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.375rem;
+  --border: 2px;
+  --depth: 3;
+  --noise: 0.25;
+};
+
+/* Enhanced Forest Theme - Deep Woodland Colors */
+@plugin "daisyui/theme" {
+  name: "forest";
+  color-scheme: dark;
+  
+  /* Deep forest colors */
+  --color-primary: oklch(45% 0.25 140);        /* Deep forest green */
+  --color-primary-content: oklch(90% 0.05 140);
+  --color-secondary: oklch(40% 0.20 80);       /* Moss green */
+  --color-secondary-content: oklch(90% 0.05 80);
+  --color-accent: oklch(50% 0.15 60);          /* Autumn gold */
+  --color-accent-content: oklch(90% 0.05 60);
+  --color-neutral: oklch(25% 0.10 120);        /* Dark bark */
+  --color-neutral-content: oklch(85% 0.05 120);
+  
+  /* Natural woodland base colors */
+  --color-base-100: oklch(12% 0.05 120);       /* Very dark forest */
+  --color-base-200: oklch(8% 0.08 120);        /* Darker forest */
+  --color-base-300: oklch(5% 0.10 120);        /* Deepest forest */
+  --color-base-content: oklch(80% 0.10 140);   /* Light green text */
+  
+  /* Nature status colors */
+  --color-info: oklch(55% 0.20 200);           /* Stream blue */
+  --color-info-content: oklch(90% 0.05 200);
+  --color-success: oklch(50% 0.25 140);        /* Vibrant green */
+  --color-success-content: oklch(90% 0.05 140);
+  --color-warning: oklch(65% 0.25 60);         /* Sunlight yellow */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(45% 0.25 15);           /* Berry red */
+  --color-error-content: oklch(90% 0.05 15);
+  
+  /* Natural organic styling */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.625rem;
+  --border: 1px;
+  --depth: 2;
+  --noise: 0.15;
+};
+
+/* Enhanced Aqua Theme - Ocean Depths */
+@plugin "daisyui/theme" {
+  name: "aqua";
+  color-scheme: light;
+  
+  /* Ocean aqua colors */
+  --color-primary: oklch(60% 0.25 200);        /* Deep ocean blue */
+  --color-primary-content: oklch(95% 0.05 200);
+  --color-secondary: oklch(70% 0.20 180);      /* Turquoise */
+  --color-secondary-content: oklch(15% 0.05 180);
+  --color-accent: oklch(75% 0.15 160);         /* Seafoam green */
+  --color-accent-content: oklch(15% 0.05 160);
+  --color-neutral: oklch(45% 0.15 220);        /* Deep sea blue */
+  --color-neutral-content: oklch(90% 0.05 220);
+  
+  /* Ocean wave base colors */
+  --color-base-100: oklch(95% 0.03 200);       /* Very light aqua */
+  --color-base-200: oklch(90% 0.05 200);       /* Light aqua */
+  --color-base-300: oklch(82% 0.08 200);       /* Soft aqua */
+  --color-base-content: oklch(20% 0.10 220);   /* Deep blue text */
+  
+  /* Ocean status colors */
+  --color-info: oklch(65% 0.25 220);           /* Deep blue */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(60% 0.20 160);        /* Coral green */
+  --color-success-content: oklch(95% 0.05 160);
+  --color-warning: oklch(75% 0.20 60);         /* Sunset orange */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(55% 0.25 15);           /* Coral red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Flowing water styling */
+  --radius-selector: 1.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0.05;
+};
+
+/* Enhanced Dracula Theme - Gothic Vampire Aesthetic */
+@plugin "daisyui/theme" {
+  name: "dracula";
+  color-scheme: dark;
+  
+  /* Gothic dracula colors */
+  --color-primary: oklch(55% 0.30 320);        /* Blood magenta */
+  --color-primary-content: oklch(95% 0.05 320);
+  --color-secondary: oklch(60% 0.25 280);      /* Royal purple */
+  --color-secondary-content: oklch(95% 0.05 280);
+  --color-accent: oklch(70% 0.20 180);         /* Ethereal cyan */
+  --color-accent-content: oklch(15% 0.05 180);
+  --color-neutral: oklch(20% 0.10 300);        /* Dark gothic */
+  --color-neutral-content: oklch(85% 0.10 300);
+  
+  /* Gothic castle base colors */
+  --color-base-100: oklch(10% 0.05 300);       /* Very dark gothic */
+  --color-base-200: oklch(7% 0.08 300);        /* Darker gothic */
+  --color-base-300: oklch(4% 0.10 300);        /* Deepest gothic */
+  --color-base-content: oklch(85% 0.15 320);   /* Bright magenta text */
+  
+  /* Vampire status colors */
+  --color-info: oklch(65% 0.25 240);           /* Midnight blue */
+  --color-info-content: oklch(95% 0.05 240);
+  --color-success: oklch(60% 0.25 140);        /* Poison green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(70% 0.25 60);         /* Golden chalice */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(50% 0.35 15);           /* Blood red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Gothic architectural styling */
+  --radius-selector: 0.375rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --border: 2px;
+  --depth: 4;
+  --noise: 0.2;
+};
+
+/* Enhanced Pastel Theme - Soft Dreamy Colors */
+@plugin "daisyui/theme" {
+  name: "pastel";
+  color-scheme: light;
+  
+  /* Soft pastel colors */
+  --color-primary: oklch(80% 0.15 320);        /* Soft lavender */
+  --color-primary-content: oklch(25% 0.05 320);
+  --color-secondary: oklch(85% 0.12 280);      /* Gentle purple */
+  --color-secondary-content: oklch(25% 0.05 280);
+  --color-accent: oklch(88% 0.10 180);         /* Mint cream */
+  --color-accent-content: oklch(25% 0.05 180);
+  --color-neutral: oklch(75% 0.08 260);        /* Soft gray */
+  --color-neutral-content: oklch(30% 0.05 260);
+  
+  /* Dreamy light base colors */
+  --color-base-100: oklch(98% 0.02 320);       /* Almost white with hint of pink */
+  --color-base-200: oklch(95% 0.03 320);       /* Very light pink */
+  --color-base-300: oklch(92% 0.04 320);       /* Light pink */
+  --color-base-content: oklch(30% 0.08 280);   /* Soft dark purple text */
+  
+  /* Gentle status colors */
+  --color-info: oklch(82% 0.12 220);           /* Soft blue */
+  --color-info-content: oklch(25% 0.05 220);
+  --color-success: oklch(85% 0.10 140);        /* Soft green */
+  --color-success-content: oklch(25% 0.05 140);
+  --color-warning: oklch(88% 0.12 80);         /* Soft peach */
+  --color-warning-content: oklch(25% 0.05 80);
+  --color-error: oklch(82% 0.15 15);           /* Soft coral */
+  --color-error-content: oklch(25% 0.05 15);
+  
+  /* Soft rounded styling */
+  --radius-selector: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0.02;
+};
+
+/* Enhanced Fantasy Theme - Magical Mystical Colors */
+@plugin "daisyui/theme" {
+  name: "fantasy";
+  color-scheme: light;
+  
+  /* Magical fantasy colors */
+  --color-primary: oklch(65% 0.25 280);        /* Royal purple */
+  --color-primary-content: oklch(95% 0.05 280);
+  --color-secondary: oklch(70% 0.20 320);      /* Mystic magenta */
+  --color-secondary-content: oklch(95% 0.05 320);
+  --color-accent: oklch(75% 0.18 60);          /* Golden magic */
+  --color-accent-content: oklch(15% 0.05 60);
+  --color-neutral: oklch(45% 0.12 260);        /* Enchanted gray */
+  --color-neutral-content: oklch(90% 0.05 260);
+  
+  /* Mystical base colors */
+  --color-base-100: oklch(96% 0.03 280);       /* Ethereal white */
+  --color-base-200: oklch(92% 0.05 280);       /* Light mystical */
+  --color-base-300: oklch(88% 0.07 280);       /* Soft purple */
+  --color-base-content: oklch(25% 0.10 280);   /* Deep purple text */
+  
+  /* Magical status colors */
+  --color-info: oklch(70% 0.20 240);           /* Sapphire blue */
+  --color-info-content: oklch(95% 0.05 240);
+  --color-success: oklch(68% 0.22 140);        /* Emerald green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(75% 0.25 50);         /* Amber crystal */
+  --color-warning-content: oklch(15% 0.05 50);
+  --color-error: oklch(65% 0.25 15);           /* Ruby red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Magical rounded styling */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 2px;
+  --depth: 3;
+  --noise: 0.1;
+};
+
+/* Enhanced Wireframe Theme - Clean Technical Lines */
+@plugin "daisyui/theme" {
+  name: "wireframe";
+  color-scheme: light;
+  
+  /* Technical wireframe colors */
+  --color-primary: oklch(40% 0.20 240);        /* Technical blue */
+  --color-primary-content: oklch(95% 0.05 240);
+  --color-secondary: oklch(35% 0.15 200);      /* Steel blue */
+  --color-secondary-content: oklch(95% 0.05 200);
+  --color-accent: oklch(45% 0.18 180);         /* Cyan accent */
+  --color-accent-content: oklch(95% 0.05 180);
+  --color-neutral: oklch(50% 0.05 220);        /* Neutral gray */
+  --color-neutral-content: oklch(95% 0.05 220);
+  
+  /* Clean base colors */
+  --color-base-100: oklch(100% 0 0);           /* Pure white */
+  --color-base-200: oklch(96% 0.01 220);       /* Very light gray */
+  --color-base-300: oklch(92% 0.02 220);       /* Light gray */
+  --color-base-content: oklch(20% 0.05 220);   /* Dark gray text */
+  
+  /* Technical status colors */
+  --color-info: oklch(55% 0.20 220);           /* Info blue */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(50% 0.18 140);        /* Success green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(60% 0.22 80);         /* Warning orange */
+  --color-warning-content: oklch(15% 0.05 80);
+  --color-error: oklch(55% 0.25 15);           /* Error red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Sharp technical styling */
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --border: 2px;
+  --depth: 0;
+  --noise: 0;
+};
+
+/* Enhanced Black Theme - Deep Elegant Darkness */
+@plugin "daisyui/theme" {
+  name: "black";
+  color-scheme: dark;
+  
+  /* Elegant black colors */
+  --color-primary: oklch(85% 0.15 240);        /* Bright blue */
+  --color-primary-content: oklch(10% 0.05 240);
+  --color-secondary: oklch(80% 0.12 280);      /* Bright purple */
+  --color-secondary-content: oklch(10% 0.05 280);
+  --color-accent: oklch(88% 0.10 180);         /* Bright cyan */
+  --color-accent-content: oklch(10% 0.05 180);
+  --color-neutral: oklch(25% 0.05 220);        /* Dark gray */
+  --color-neutral-content: oklch(90% 0.05 220);
+  
+  /* Pure black base colors */
+  --color-base-100: oklch(8% 0.02 220);        /* Almost black */
+  --color-base-200: oklch(5% 0.03 220);        /* Darker black */
+  --color-base-300: oklch(2% 0.04 220);        /* Pure black */
+  --color-base-content: oklch(95% 0.05 240);   /* Bright white text */
+  
+  /* Bright status colors on black */
+  --color-info: oklch(80% 0.18 220);           /* Bright info blue */
+  --color-info-content: oklch(10% 0.05 220);
+  --color-success: oklch(75% 0.20 140);        /* Bright green */
+  --color-success-content: oklch(10% 0.05 140);
+  --color-warning: oklch(85% 0.22 80);         /* Bright yellow */
+  --color-warning-content: oklch(10% 0.05 80);
+  --color-error: oklch(75% 0.25 15);           /* Bright red */
+  --color-error-content: oklch(10% 0.05 15);
+  
+  /* Minimal styling */
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --border: 1px;
+  --depth: 2;
+  --noise: 0.05;
+};
+
+/* Enhanced Luxury Theme - Premium Gold and Rich Colors */
+@plugin "daisyui/theme" {
+  name: "luxury";
+  color-scheme: dark;
+  
+  /* Luxurious colors */
+  --color-primary: oklch(70% 0.25 60);         /* Rich gold */
+  --color-primary-content: oklch(10% 0.05 60);
+  --color-secondary: oklch(65% 0.20 30);       /* Copper bronze */
+  --color-secondary-content: oklch(10% 0.05 30);
+  --color-accent: oklch(75% 0.18 80);          /* Champagne */
+  --color-accent-content: oklch(10% 0.05 80);
+  --color-neutral: oklch(20% 0.08 40);         /* Rich brown */
+  --color-neutral-content: oklch(90% 0.05 40);
+  
+  /* Premium base colors */
+  --color-base-100: oklch(12% 0.05 40);        /* Deep luxury brown */
+  --color-base-200: oklch(8% 0.08 40);         /* Darker luxury */
+  --color-base-300: oklch(5% 0.10 40);         /* Deepest luxury */
+  --color-base-content: oklch(90% 0.10 60);    /* Golden text */
+  
+  /* Premium status colors */
+  --color-info: oklch(70% 0.20 240);           /* Sapphire blue */
+  --color-info-content: oklch(10% 0.05 240);
+  --color-success: oklch(65% 0.22 140);        /* Emerald green */
+  --color-success-content: oklch(10% 0.05 140);
+  --color-warning: oklch(75% 0.25 50);         /* Amber warning */
+  --color-warning-content: oklch(10% 0.05 50);
+  --color-error: oklch(65% 0.25 15);           /* Ruby red */
+  --color-error-content: oklch(10% 0.05 15);
+  
+  /* Elegant styling */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.5rem;
+  --border: 2px;
+  --depth: 3;
+  --noise: 0.1;
+};
+
+/* Enhanced CMYK Theme - Print Design Colors */
+@plugin "daisyui/theme" {
+  name: "cmyk";
+  color-scheme: light;
+  
+  /* CMYK print colors */
+  --color-primary: oklch(55% 0.30 320);        /* Magenta */
+  --color-primary-content: oklch(95% 0.05 320);
+  --color-secondary: oklch(60% 0.25 180);      /* Cyan */
+  --color-secondary-content: oklch(95% 0.05 180);
+  --color-accent: oklch(65% 0.28 80);          /* Yellow */
+  --color-accent-content: oklch(15% 0.05 80);
+  --color-neutral: oklch(25% 0.05 220);        /* Key (black) */
+  --color-neutral-content: oklch(95% 0.05 220);
+  
+  /* Print-ready base colors */
+  --color-base-100: oklch(98% 0.01 220);       /* Paper white */
+  --color-base-200: oklch(94% 0.02 220);       /* Light gray */
+  --color-base-300: oklch(90% 0.03 220);       /* Medium gray */
+  --color-base-content: oklch(15% 0.05 220);   /* Print black */
+  
+  /* CMYK status colors */
+  --color-info: oklch(60% 0.25 220);           /* Process blue */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(55% 0.25 140);        /* Process green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(70% 0.30 70);         /* Process yellow */
+  --color-warning-content: oklch(15% 0.05 70);
+  --color-error: oklch(50% 0.30 15);           /* Process red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Print styling */
+  --radius-selector: 0.125rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.125rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+};
+
+/* Enhanced Autumn Theme - Warm Fall Colors */
+@plugin "daisyui/theme" {
+  name: "autumn";
+  color-scheme: light;
+  
+  /* Autumn fall colors */
+  --color-primary: oklch(60% 0.25 40);         /* Burnt orange */
+  --color-primary-content: oklch(95% 0.05 40);
+  --color-secondary: oklch(55% 0.22 20);       /* Deep red */
+  --color-secondary-content: oklch(95% 0.05 20);
+  --color-accent: oklch(70% 0.20 80);          /* Golden yellow */
+  --color-accent-content: oklch(15% 0.05 80);
+  --color-neutral: oklch(40% 0.12 30);         /* Brown */
+  --color-neutral-content: oklch(90% 0.05 30);
+  
+  /* Warm autumn base colors */
+  --color-base-100: oklch(95% 0.03 40);        /* Warm cream */
+  --color-base-200: oklch(90% 0.05 40);        /* Light autumn */
+  --color-base-300: oklch(85% 0.07 40);        /* Soft orange */
+  --color-base-content: oklch(25% 0.08 30);    /* Dark brown text */
+  
+  /* Autumn status colors */
+  --color-info: oklch(65% 0.20 240);           /* Autumn sky blue */
+  --color-info-content: oklch(95% 0.05 240);
+  --color-success: oklch(60% 0.22 120);        /* Forest green */
+  --color-success-content: oklch(95% 0.05 120);
+  --color-warning: oklch(75% 0.25 60);         /* Harvest gold */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(55% 0.25 15);           /* Maple red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Natural autumn styling */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.5rem;
+  --border: 2px;
+  --depth: 2;
+  --noise: 0.08;
+};
+
+/* Enhanced Business Theme - Professional Corporate Colors */
+@plugin "daisyui/theme" {
+  name: "business";
+  color-scheme: dark;
+  
+  /* Professional business colors */
+  --color-primary: oklch(65% 0.18 240);        /* Corporate blue */
+  --color-primary-content: oklch(95% 0.05 240);
+  --color-secondary: oklch(60% 0.15 220);      /* Steel blue */
+  --color-secondary-content: oklch(95% 0.05 220);
+  --color-accent: oklch(70% 0.12 200);         /* Professional cyan */
+  --color-accent-content: oklch(15% 0.05 200);
+  --color-neutral: oklch(30% 0.08 220);        /* Business gray */
+  --color-neutral-content: oklch(90% 0.05 220);
+  
+  /* Corporate base colors */
+  --color-base-100: oklch(15% 0.03 220);       /* Dark corporate */
+  --color-base-200: oklch(12% 0.05 220);       /* Darker corporate */
+  --color-base-300: oklch(8% 0.07 220);        /* Deepest corporate */
+  --color-base-content: oklch(90% 0.08 240);   /* Professional text */
+  
+  /* Business status colors */
+  --color-info: oklch(70% 0.18 220);           /* Info blue */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(65% 0.20 140);        /* Success green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(75% 0.22 70);         /* Warning amber */
+  --color-warning-content: oklch(15% 0.05 70);
+  --color-error: oklch(65% 0.22 15);           /* Error red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Professional styling */
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --border: 1px;
+  --depth: 2;
+  --noise: 0.03;
+};
+
+/* Enhanced Acid Theme - Vibrant Neon Rave Colors */
+@plugin "daisyui/theme" {
+  name: "acid";
+  color-scheme: dark;
+  
+  /* Acid rave colors */
+  --color-primary: oklch(80% 0.35 120);        /* Electric lime */
+  --color-primary-content: oklch(10% 0.05 120);
+  --color-secondary: oklch(85% 0.30 300);      /* Hot pink */
+  --color-secondary-content: oklch(10% 0.05 300);
+  --color-accent: oklch(90% 0.25 60);          /* Neon yellow */
+  --color-accent-content: oklch(10% 0.05 60);
+  --color-neutral: oklch(20% 0.15 280);        /* Dark purple */
+  --color-neutral-content: oklch(95% 0.10 280);
+  
+  /* Rave base colors */
+  --color-base-100: oklch(8% 0.08 280);        /* Dark rave */
+  --color-base-200: oklch(5% 0.12 280);        /* Darker rave */
+  --color-base-300: oklch(3% 0.15 280);        /* Deepest rave */
+  --color-base-content: oklch(95% 0.20 120);   /* Bright lime text */
+  
+  /* Acid status colors */
+  --color-info: oklch(85% 0.30 200);           /* Electric blue */
+  --color-info-content: oklch(10% 0.05 200);
+  --color-success: oklch(80% 0.35 140);        /* Toxic green */
+  --color-success-content: oklch(10% 0.05 140);
+  --color-warning: oklch(90% 0.30 80);         /* Acid yellow */
+  --color-warning-content: oklch(10% 0.05 80);
+  --color-error: oklch(75% 0.35 15);           /* Hot red */
+  --color-error-content: oklch(10% 0.05 15);
+  
+  /* Rave styling */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 3px;
+  --depth: 5;
+  --noise: 0.25;
+};
+
+/* Enhanced Lemonade Theme - Fresh Citrus Colors */
+@plugin "daisyui/theme" {
+  name: "lemonade";
+  color-scheme: light;
+  
+  /* Fresh lemonade colors */
+  --color-primary: oklch(75% 0.25 80);         /* Lemon yellow */
+  --color-primary-content: oklch(15% 0.05 80);
+  --color-secondary: oklch(70% 0.20 120);      /* Lime green */
+  --color-secondary-content: oklch(15% 0.05 120);
+  --color-accent: oklch(80% 0.18 40);          /* Orange zest */
+  --color-accent-content: oklch(15% 0.05 40);
+  --color-neutral: oklch(50% 0.10 60);         /* Citrus brown */
+  --color-neutral-content: oklch(90% 0.05 60);
+  
+  /* Fresh citrus base colors */
+  --color-base-100: oklch(98% 0.02 80);        /* Lemon cream */
+  --color-base-200: oklch(94% 0.04 80);        /* Light lemon */
+  --color-base-300: oklch(90% 0.06 80);        /* Soft yellow */
+  --color-base-content: oklch(25% 0.08 60);    /* Dark citrus text */
+  
+  /* Citrus status colors */
+  --color-info: oklch(70% 0.20 220);           /* Sky blue */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(65% 0.22 140);        /* Fresh green */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(80% 0.25 70);         /* Citrus orange */
+  --color-warning-content: oklch(15% 0.05 70);
+  --color-error: oklch(65% 0.25 15);           /* Berry red */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Fresh styling */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 2px;
+  --depth: 2;
+  --noise: 0.06;
+};
+
+/* Enhanced Night Theme - Deep Midnight Colors */
+@plugin "daisyui/theme" {
+  name: "night";
+  color-scheme: dark;
+  
+  /* Midnight colors */
+  --color-primary: oklch(70% 0.20 240);        /* Midnight blue */
+  --color-primary-content: oklch(95% 0.05 240);
+  --color-secondary: oklch(65% 0.18 280);      /* Deep purple */
+  --color-secondary-content: oklch(95% 0.05 280);
+  --color-accent: oklch(75% 0.15 200);         /* Night cyan */
+  --color-accent-content: oklch(15% 0.05 200);
+  --color-neutral: oklch(25% 0.08 260);        /* Night gray */
+  --color-neutral-content: oklch(90% 0.05 260);
+  
+  /* Deep night base colors */
+  --color-base-100: oklch(10% 0.05 260);       /* Deep night */
+  --color-base-200: oklch(7% 0.08 260);        /* Darker night */
+  --color-base-300: oklch(4% 0.10 260);        /* Deepest night */
+  --color-base-content: oklch(90% 0.10 240);   /* Moonlight text */
+  
+  /* Night status colors */
+  --color-info: oklch(75% 0.18 220);           /* Night info */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(70% 0.20 140);        /* Night success */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(80% 0.22 60);         /* Night warning */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(70% 0.25 15);           /* Night error */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Night styling */
+  --radius-selector: 0.375rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.375rem;
+  --border: 1px;
+  --depth: 3;
+  --noise: 0.08;
+};
+
+/* Enhanced Coffee Theme - Rich Coffee Colors */
+@plugin "daisyui/theme" {
+  name: "coffee";
+  color-scheme: dark;
+  
+  /* Rich coffee colors */
+  --color-primary: oklch(55% 0.20 40);         /* Coffee brown */
+  --color-primary-content: oklch(95% 0.05 40);
+  --color-secondary: oklch(60% 0.18 30);       /* Espresso */
+  --color-secondary-content: oklch(95% 0.05 30);
+  --color-accent: oklch(70% 0.15 60);          /* Caramel */
+  --color-accent-content: oklch(15% 0.05 60);
+  --color-neutral: oklch(30% 0.10 35);         /* Dark roast */
+  --color-neutral-content: oklch(90% 0.05 35);
+  
+  /* Coffee base colors */
+  --color-base-100: oklch(12% 0.05 35);        /* Dark coffee */
+  --color-base-200: oklch(8% 0.08 35);         /* Darker coffee */
+  --color-base-300: oklch(5% 0.10 35);         /* Deepest coffee */
+  --color-base-content: oklch(90% 0.08 40);    /* Cream text */
+  
+  /* Coffee status colors */
+  --color-info: oklch(65% 0.18 220);           /* Coffee info */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(60% 0.20 120);        /* Coffee success */
+  --color-success-content: oklch(95% 0.05 120);
+  --color-warning: oklch(75% 0.22 50);         /* Coffee warning */
+  --color-warning-content: oklch(15% 0.05 50);
+  --color-error: oklch(60% 0.22 15);           /* Coffee error */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Coffee styling */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.5rem;
+  --border: 2px;
+  --depth: 3;
+  --noise: 0.12;
+};
+
+/* Enhanced Winter Theme - Cool Icy Colors */
+@plugin "daisyui/theme" {
+  name: "winter";
+  color-scheme: light;
+  
+  /* Cool winter colors */
+  --color-primary: oklch(65% 0.20 240);        /* Ice blue */
+  --color-primary-content: oklch(95% 0.05 240);
+  --color-secondary: oklch(70% 0.15 200);      /* Frost blue */
+  --color-secondary-content: oklch(95% 0.05 200);
+  --color-accent: oklch(75% 0.12 180);         /* Snow cyan */
+  --color-accent-content: oklch(15% 0.05 180);
+  --color-neutral: oklch(45% 0.08 220);        /* Winter gray */
+  --color-neutral-content: oklch(90% 0.05 220);
+  
+  /* Icy winter base colors */
+  --color-base-100: oklch(98% 0.02 240);       /* Snow white */
+  --color-base-200: oklch(94% 0.03 240);       /* Light frost */
+  --color-base-300: oklch(90% 0.05 240);       /* Soft ice */
+  --color-base-content: oklch(25% 0.08 240);   /* Dark winter text */
+  
+  /* Winter status colors */
+  --color-info: oklch(70% 0.18 220);           /* Winter info */
+  --color-info-content: oklch(95% 0.05 220);
+  --color-success: oklch(65% 0.20 140);        /* Winter success */
+  --color-success-content: oklch(95% 0.05 140);
+  --color-warning: oklch(75% 0.22 60);         /* Winter warning */
+  --color-warning-content: oklch(15% 0.05 60);
+  --color-error: oklch(65% 0.22 15);           /* Winter error */
+  --color-error-content: oklch(95% 0.05 15);
+  
+  /* Winter styling */
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0.04;
+};
+
+* {
+	@apply relative font-sans;
+}
+
+*::-webkit-scrollbar {
+	@apply hidden;
+}
+
+html,
+body {
+	@apply absolute m-0 h-full w-full overflow-hidden p-0 transition-colors;
+}

@@ -1,0 +1,92 @@
+{
+	"col-default": "Default",
+	"col-name": "Name",
+	"col-type": "Type",
+	"d1-manager": {
+		"description": "MastAI is a web UI and API for Cloudflare D1, a serverless SQL database. It provides a user-friendly interface for managing databases, tables, and records, as well as an API for performing operations programmatically. MastAI simplifies database management, enabling users to focus on their data.",
+		"name": "MastAI",
+		"title": "MastAI"
+	},
+	"d1-manager-manage-db": "Use MastAI to mange data in {db}",
+	"download": "Download",
+	"execute-sql-query-in-database": "Execute SQL query in database {db}",
+	"import": "Import",
+	"lang": {
+		"en": "English",
+		"es-ES": "Spanish from Spain",
+		"es-MX": "Mexican Spanish",
+		"ja": "Japanese",
+		"zh-CN": "Simplified Chinese",
+		"zh-TW": "Traditional Chinese"
+	},
+	"language": "Language",
+	"n-ms": "{n} ms",
+	"n-table-in-db": "{n} tables in {db}",
+	"plugin": {
+		"add-record": {
+			"add": "Add Record",
+			"column": "Column",
+			"error": "Error",
+			"integer-is-required": "INTEGER is required",
+			"n-ms": "{n} ms",
+			"name": "Add Record",
+			"real-is-required": "REAL number is required",
+			"success": "Success",
+			"value": "Value"
+		},
+		"csv": {
+			"export": "Export",
+			"export-csv": "Export CSV",
+			"import": "Import",
+			"import-csv": "Import CSV",
+			"invalid-column-name-key": "Invalid column name: {key}",
+			"n-ms-m-changes": "{n} ms, {m} changes",
+			"name": "CSV Importer and Exporter",
+			"no-result": "No Result",
+			"select-a-csv-file": "Select a CSV file"
+		},
+		"run-query": {
+			"export": "Export",
+			"n-ms-m-changes": "{n} ms, {rr} rows read, {rw} rows written",
+			"name": "Run SQL Query",
+			"no-result": "No result",
+			"no-results": "No Results",
+			"run": "Run",
+			"unknown-error": "Unknown error"
+		},
+		"semantic-query": {
+			"autorun-on-read-only-queries": "Read-only queries will be executed automatically.",
+			"export": "Export",
+			"n-ms-m-changes": "{n} ms, {rr} rows read, {rw} rows written",
+			"name": "Smart Assistant",
+			"no-result": "No result",
+			"no-results": "No Results",
+			"requires-ai-assistant": "This feature requires a MastAI assistant to be configured.",
+			"run": "Run",
+			"suggest": "Generate SQL",
+			"unknown-error": "Unknown error"
+		},
+		"table-browser": {
+			"click-to-sort-by": "Click to sort by {col}",
+			"invalid-rowid": "Invalid rowid",
+			"name": "Table Browser",
+			"next": "Next",
+			"no-record": "No Record",
+			"no-result": "No Result",
+			"no-results": "No Matched Result",
+			"prev": "Previous",
+			"showing": "{from} ~ {to}",
+			"table-is-locked": "Table is locked, unlock to edit it",
+			"table-is-locked-click-to-unlock": "Table is locked, click to unlock",
+			"table-is-unlocked-click-to-lock": "Table is unlocked, click to lock",
+			"unknown-error": "Unknown Error"
+		}
+	},
+	"rows": "Rows",
+	"see-github": "Checkout the usage and guide on GitHub",
+	"select-database": "Select Database",
+	"select-database-from-above": "Select a database from the top-right corner",
+	"show-first-10-records": "show first 10 records in {table}",
+	"suggestion-will-appear-here": "Generated SQL will appear here",
+	"theme": "Theme"
+}

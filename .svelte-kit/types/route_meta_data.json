@@ -1,0 +1,104 @@
+{
+	"/": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/admin": [
+		"src/routes/admin/+page.server.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/api": [
+		"src/routes/api/+server.ts"
+	],
+	"/api/auth/access": [
+		"src/routes/api/auth/access/+server.ts"
+	],
+	"/api/auth/login": [
+		"src/routes/api/auth/login/+server.ts"
+	],
+	"/api/auth/logout": [
+		"src/routes/api/auth/logout/+server.ts"
+	],
+	"/api/auth/me": [
+		"src/routes/api/auth/me/+server.ts"
+	],
+	"/api/auth/register": [
+		"src/routes/api/auth/register/+server.ts"
+	],
+	"/api/auth/users": [
+		"src/routes/api/auth/users/+server.ts"
+	],
+	"/api/auth/users/[id]": [
+		"src/routes/api/auth/users/[id]/+server.ts"
+	],
+	"/api/databases": [
+		"src/routes/api/databases/+server.ts"
+	],
+	"/api/databases/test": [
+		"src/routes/api/databases/test/+server.ts"
+	],
+	"/api/db": [
+		"src/routes/api/db/+server.ts"
+	],
+	"/api/db/[database]": [
+		"src/routes/api/db/[database]/+server.ts"
+	],
+	"/api/db/[database]/all": [
+		"src/routes/api/db/[database]/all/+server.ts"
+	],
+	"/api/db/[database]/assistant": [
+		"src/routes/api/db/[database]/assistant/+server.ts"
+	],
+	"/api/db/[database]/dump": [
+		"src/routes/api/db/[database]/dump/+server.ts"
+	],
+	"/api/db/[database]/dump/[filename]": [
+		"src/routes/api/db/[database]/dump/[filename]/+server.ts"
+	],
+	"/api/db/[database]/exec": [
+		"src/routes/api/db/[database]/exec/+server.ts"
+	],
+	"/api/db/[database]/[table]": [
+		"src/routes/api/db/[database]/[table]/+server.ts"
+	],
+	"/api/db/[database]/[table]/data": [
+		"src/routes/api/db/[database]/[table]/data/+server.ts"
+	],
+	"/db": [
+		"src/routes/db/+page.server.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/db/[database]": [
+		"src/routes/db/[database]/+layout.server.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/db/[database]/+layout.server.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/db/[database]/[table]": [
+		"src/routes/db/[database]/+layout.server.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/login": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/themes": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/themes/enhanced": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/themes/[theme]": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.server.ts"
+	]
+}
